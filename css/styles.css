@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Baloo+2:wght@400..800&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Abel&family=Annapurna+SIL:wght@400;700&family=Baloo+2:wght@400..800&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
+
+:root {
+    --text-font1: "Baloo 2", sans-serif;
+    --text-font2: "Annapurna SIL", serif;
+
+    --color-darkwhite: rgba(228, 228, 228, 1);
+    --color-lightblack: rgba(10, 10, 10, 1);
+    --color-white: white;
+    --color-black: black;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--color-darkwhite);
+   
+}
+
+.wrapper {
+    max-width: 1000vw;
+    height: auto;
+}
+
+.header {
+    background-image: url("../assets/photos/09-night.jpg");
+    background-size: cover;
+    background-position: 50%;
+    height: 88vh;
+    width: 100%;
+    border-radius: 0px 0px 70px 70px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.header__logo {
+    transform: scale(0.35);
+    
+}
+
+.header__sign-in {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 2rem;
+}
+
+.header__sign-up {
+    font-family: var(--text-font1);
+    font-size: 20px;
+    color: var(--color-white);
+}
+
+.header__button {
+    font-family: var(--text-font1);
+    font-size: 20px;
+    color: var(--color-white);
+    background-color: transparent;
+    border: solid 3px var(--color-white);
+    border-radius: 10px;
+    padding: .3rem 1rem;
+}
+
+.menu {
+    background-color: var(--color-darkwhite);
+    box-shadow: 0 5px 5px rgba(35, 35, 35, 0.2);
+    width: 1100px;
+    border-radius: 0px 0px 20px 20px;
+    place-self: center;
+    display: flex;
+    height: 4.5rem;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--text-font1);
+    font-size: 24px;
+}
+
+.menu__link {
+    text-decoration: none;
+    color: var(--color-black);
+    padding: 1rem 3rem;
+    flex: 1; 
+    text-align: center; 
+    
+}
+
+.menu__link--selected {
+    text-decoration: none;
+    color: var(--color-white);
+    background-color: var(--color-lightblack);
+    padding: 1rem 3rem;
+    flex: 1; 
+    text-align: center; 
+    border-radius: 0px 0px 0px 20px;
+}
+
+.welcome-section {
+    place-self: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 1100px;
+    margin-top: 4rem;
+    text-align: center;
+    gap: 1rem;
+}
+
+.welcome-section__title {
+    font-family: var(--text-font1);
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.welcome-section__logo {
+    width: 4rem;
+    height: 4rem;
+}
+
+.welcome-section__text {
+    font-family: var(--text-font2);
+}
