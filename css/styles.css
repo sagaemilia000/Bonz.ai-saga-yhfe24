@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Baloo+2:wght@400..800&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Abel&family=Annapurna+SIL:wght@400;700&family=Baloo+2:wght@400..800&family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sansita:ital,wght@0,400;0,700;0,800;0,900;1,400;1,700;1,800;1,900&display=swap');
 
+
 :root {
     --text-font1: "Baloo 2", sans-serif;
     --text-font2: "Annapurna SIL", serif;
@@ -25,6 +26,10 @@ body {
 .wrapper {
     max-width: 1000vw;
     height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
 }
 
 .header {
@@ -60,6 +65,7 @@ body {
     font-family: var(--text-font1);
     font-size: 20px;
     color: var(--color-white);
+    cursor: pointer;
 }
 
 .header__button {
@@ -70,47 +76,52 @@ body {
     border: solid 3px var(--color-white);
     border-radius: 10px;
     padding: .3rem 1rem;
+    cursor: pointer;
 }
 
 .menu {
     background-color: var(--color-darkwhite);
     box-shadow: 0 5px 5px rgba(35, 35, 35, 0.2);
-    width: 1100px;
+    width: 75%;
     border-radius: 0px 0px 20px 20px;
-    place-self: center;
+    /*place-self: center;*/
     display: flex;
     height: 4.5rem;
     justify-content: center;
     align-items: center;
     font-family: var(--text-font1);
-    font-size: 24px;
+    /*font-size: 24px;*/
+    font-size: clamp(16px, 2vw, 24px);
 }
 
-.menu__link {
+.menu__link, .menu__link--selected {
     text-decoration: none;
     color: var(--color-black);
-    padding: 1rem 3rem;
+    /*padding: 1rem 3rem;*/
+    padding: clamp(0.8rem, 4vw, 1rem) clamp(1.2rem, 3vw, 3rem);
     flex: 1; 
     text-align: center; 
-    
+    font-size: inherit;
+    white-space: nowrap ;
 }
 
 .menu__link--selected {
-    text-decoration: none;
-    color: var(--color-white);
-    background-color: var(--color-lightblack);
+    /*text-decoration: none;
+    
     padding: 1rem 3rem;
     flex: 1; 
-    text-align: center; 
+    text-align: center;*/
+    color: var(--color-white);
+    background-color: var(--color-lightblack);
     border-radius: 0px 0px 0px 20px;
 }
 
 .welcome-section {
-    place-self: center;
+    /*place-self: center;*/
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 1100px;
+    width: 60%;
     margin-top: 4rem;
     text-align: center;
     gap: 1rem;
@@ -129,4 +140,141 @@ body {
 
 .welcome-section__text {
     font-family: var(--text-font2);
+    margin-top: 1rem;
 }
+
+.room-section {
+    background-color: var(--color-lightblack);
+    width: 75%;
+    border-radius: .5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 3rem 2rem 3rem 2rem;
+    margin-top: 6rem;
+}
+
+.room-section__title {
+    font-family: var(--text-font1);
+    color: var(--color-white);
+    font-weight: 400;
+    font-size: 32px;
+}
+
+.room-section__text {
+    font-family: var(--text-font2);
+    color: var(--color-darkwhite);
+    width: 75%;
+    font-size: 15px;
+}
+
+.room-section__images {
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    margin-top: 3rem;
+    margin-bottom: 3.5rem;
+}
+
+.room-section__img {
+    width: 29%;
+    height: 234px;
+    object-fit: cover;
+    border-radius: .5rem;
+}
+
+.room-section__button {
+    font-family: var(--text-font1);
+    font-size: 24px;
+    padding: .2rem 2.5rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.nature-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.nature-section__title {
+    font-family: var(--text-font1);
+    color: var(--color-black);
+    font-weight: 400;
+    font-size: 32px;
+    margin-top: 6rem;
+}
+
+.nature-section__text {
+    font-family: var(--text-font2);
+    margin-top: .5rem;
+    width: 55%;
+}
+
+.nature-section__gallery {
+    margin: 3rem auto 3rem auto;
+    width: 67%;
+    height: 80%;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, auto);
+}
+
+.nature-section__img1 {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+}
+
+.nature-section__img2 {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+}
+
+.nature-section__img3 {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+}
+
+.nature-section__img4 {
+    grid-column: 3 / 4;
+    grid-row: 1 / 3;
+}
+
+.nature-section__gallery img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.nature-section__button {
+    font-family: var(--text-font1);
+    font-size: 24px;
+    padding: .4rem 2.2rem;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: var(--color-lightblack);
+    color: var(--color-white);
+}
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--color-lightblack);
+    width: 100%;
+    height: 25rem;
+}
+
+.footer__adress, .footer__information, .footer__my-account {
+    display: flex;
+    flex-direction: column;
+    color: var(--color-white);
+}
+
+
+
