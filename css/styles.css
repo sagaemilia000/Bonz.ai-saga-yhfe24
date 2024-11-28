@@ -57,6 +57,8 @@ body {
     left: 1rem;
     width: 2.5rem;
     display: none;
+    cursor: pointer;
+    transition: transform .5s;
 }
 
 .header__sign-in {
@@ -74,6 +76,7 @@ body {
     font-size: 20px;
     color: var(--color-white);
     cursor: pointer;
+    transition: transform .5s;
 }
 
 .header__button {
@@ -85,13 +88,26 @@ body {
     border-radius: 10px;
     padding: .3rem 1rem;
     cursor: pointer;
+    transition: transform .5s;
+}
+
+.header__burger:hover {
+    transform: scale(1.1);
+}
+
+.header__sign-up:hover {
+    transform: scale(1.2);
+}
+
+.header__button:hover {
+    transform: scale(1.05);
 }
 
 .menu {
     background-color: var(--color-darkwhite);
     box-shadow: 0 5px 5px rgba(35, 35, 35, 0.2);
     width: 75%;
-    border-radius: 0px 0px 20px 20px;
+    
     /*place-self: center;*/
     display: flex;
     height: 4.5rem;
@@ -106,11 +122,15 @@ body {
     text-decoration: none;
     color: var(--color-black);
     /*padding: 1rem 3rem;*/
-    padding: clamp(0.8rem, 4vw, 1rem) clamp(1.2rem, 3vw, 3rem);
+    padding: clamp(0.8rem, 4vw, 1.03rem) clamp(1.2rem, 3vw, 3rem);
     flex: 1; 
     text-align: center; 
     font-size: inherit;
     white-space: nowrap ;
+}
+
+.menu__link:hover {
+    background-color: rgb(186, 186, 186);
 }
 
 .menu__link--selected {
@@ -121,7 +141,7 @@ body {
     text-align: center;*/
     color: var(--color-white);
     background-color: var(--color-lightblack);
-    border-radius: 0px 0px 0px 20px;
+
 }
 
 .welcome-section {
@@ -216,7 +236,10 @@ body {
     border: none;
     border-radius: 8px;
     cursor: pointer;
+    transition: transform 0.3s;
 }
+
+
 
 .nature-section {
     display: flex;
@@ -293,6 +316,12 @@ body {
     cursor: pointer;
     background-color: var(--color-lightblack);
     color: var(--color-white);
+    transition: transform 0.3s;
+}
+
+.room-section__button:hover,
+.nature-section__button:hover {
+    transform: scale(1.08);
 }
 
 .footer {
@@ -576,6 +605,7 @@ body {
     left: 1rem;
     width: 13rem;
     display: block;
+    cursor: pointer;
 }
 
 .header__title {
@@ -588,7 +618,7 @@ body {
 .menu__link--selected2 {
     text-decoration: none;
     color: var(--color-black);
-    padding: clamp(0.8rem, 4vw, 1rem) clamp(1.2rem, 3vw, 3rem);
+    padding: clamp(0.8rem, 4vw, 1.03rem) clamp(1.2rem, 3vw, 3rem);
     flex: 1; 
     text-align: center; 
     font-size: inherit;
@@ -610,6 +640,7 @@ body {
     font-family: var(--text-font1);
     font-size: 40px;
     font-weight: 500;
+    width: 75%;
 }
 
 .room-info__text-web {
@@ -632,6 +663,287 @@ body {
     font-weight: 500;
     margin-top: 5rem;
 }
+
+.room-included {
+    display: flex;
+    gap: 3rem;
+    margin-top: 3rem;
+    width: 53%;
+}
+
+.room-included__left, .room-included__right {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 50%;
+}
+
+.room-included__left--leaf,
+.room-included__left--energy,
+.room-included__left--speaker,
+.room-included__right--wifi,
+.room-included__right--recycle,
+.room-included__right--ai {
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    font-family: var(--text-font1);
+    font-weight: 600;
+    gap: 1rem;
+}
+
+.room-included__left--leaf::before {
+    content:"";
+    display: block;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    background: url("../assets/photos/leaf.svg") no-repeat;
+    float: left;
+    margin-right: .5rem;
+    
+}
+
+.room-included__left--energy::before {
+    content:"";
+    display: block;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    background: url("../assets/photos/energy.svg") no-repeat;
+    float: left;
+    margin-right: .5rem;
+}
+
+.room-included__left--speaker::before {
+    content:"";
+    display: block;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    background: url("../assets/photos/speaker.svg") no-repeat;
+    float: left;
+    margin-right: .5rem;
+}
+
+.room-included__right--wifi::before {
+    content:"";
+    display: block;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    background: url("../assets/photos/wifi.svg") no-repeat;
+    float: left;
+    margin-right: .5rem;
+}
+
+.room-included__right--wifi::before {
+    content:"";
+    display: block;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    background: url("../assets/photos/wifi.svg") no-repeat;
+    float: left;
+    margin-right: .5rem;
+}
+
+.room-included__right--recycle::before {
+    content:"";
+    display: block;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    background: url("../assets/photos/recycle.svg") no-repeat;
+    float: left;
+    margin-right: .5rem;
+}
+
+.room-included__right--ai::before {
+    content:"";
+    display: block;
+    min-width: 2.5rem;
+    height: 2.5rem;
+    background: url("../assets/photos/ai.svg") no-repeat;
+    float: left;
+    margin-right: .5rem;
+}
+
+.room-gallery-title {
+    font-size: 40px;
+    font-family: var(--text-font1);
+    font-weight: 500;
+    margin-top: 6rem;
+}
+
+.room-gallery {
+    display: grid;
+    width: 75%;
+    height: 80%;
+    gap: 4rem;
+    grid-template-columns: repeat(2, 1fr);
+    
+    margin-top: 4rem;
+    
+}
+
+
+
+.room-gallery__room1 {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/photos/02-night.jpg");
+    background-size: cover;
+    background-position: center;
+    background-position: 50%;
+    border-radius: 8px;
+    color: var(--color-white);
+    font-family: var(--text-font1);
+    font-size: 36px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.room-gallery__room2 {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/photos/04-night.jpg");
+    background-size: cover;
+    background-position: center;
+    background-position: 50%;
+    border-radius: 8px;
+    color: var(--color-white);
+    font-family: var(--text-font1);
+    font-size: 36px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.room-gallery__room3 {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/photos/05-night.jpg");
+    background-size: cover;
+    background-position: center;
+    background-position: 50%;
+    border-radius: 8px;
+    color: var(--color-white);
+    font-family: var(--text-font1);
+    font-size: 36px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.room-gallery__room4 {
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-image: url("../assets/photos/01-night.jpg");
+    background-size: cover;
+    background-position: center;
+    background-position: 50%;
+    border-radius: 8px;
+    color: var(--color-white);
+    font-family: var(--text-font1);
+    font-size: 36px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.room-gallery__room1:hover,
+.room-gallery__room2:hover,
+.room-gallery__room3:hover,
+.room-gallery__room4:hover {
+    transform: scale(1.01);
+}
+
+@media (max-width: 576px) {
+
+    .header-rooms {
+        height: 50vh;
+    }
+    
+    .header__burger {
+        display: block;
+    }
+
+    .header__logo-landscape {
+        display: none;
+    }
+
+    .header__title {
+        font-size: 48px;
+    }
+
+    .room-info__title {
+        font-size: 28px;
+    }
+
+    .room-info__text-web {
+        display: none;
+    }
+
+    .room-info__text-mobile {
+        display: block;
+    }
+
+    .room-included-title {
+        font-size: 20px;
+    }
+
+    .room-included {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+    }
+
+    .room-included__left, .room-included__right {
+        width: fit-content;
+    }
+
+    .room-included__left--leaf,
+    .room-included__left--energy,
+    .room-included__left--speaker,
+    .room-included__right--wifi,
+    .room-included__right--recycle,
+    .room-included__right--ai {
+      font-size: 13px;
+      white-space: nowrap;
+}
+
+.room-gallery-title {
+    font-size: 24px;
+    margin-top: 4rem;
+}
+
+.room-gallery {
+    display: grid;
+    width: 75%;
+    height: 80%;
+    gap: 2rem;
+    grid-template-columns: repeat(1, 1fr);
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+    .room-gallery__room1,
+    .room-gallery__room2,
+    .room-gallery__room3,
+    .room-gallery__room4 {
+        font-size: 22px;
+    }
+}
+
+
 
 
 
