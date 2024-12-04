@@ -49,7 +49,7 @@ body {
     transform: scale(0.35);
 }
 
-.header__burger {
+.header-dropdown {
     position: absolute;
     top: 1rem;
     left: 1rem;
@@ -90,7 +90,7 @@ body {
     transition: transform .2s;
 }
 
-.header__burger:hover {
+.header-dropdown__burger:hover {
     transform: scale(1.1);
 }
 
@@ -185,7 +185,7 @@ body {
 .room-section__title {
     font-family: var(--text-font1);
     color: var(--color-white);
-    font-weight: 400;
+    font-weight: 500;
     font-size: 32px;
 }
 
@@ -193,7 +193,7 @@ body {
     font-family: var(--text-font2);
     color: var(--color-darkwhite);
     width: 75%;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .room-section__text-mobile {
@@ -238,7 +238,7 @@ body {
 .nature-section__title {
     font-family: var(--text-font1);
     color: var(--color-black);
-    font-weight: 400;
+    font-weight: 500;
     font-size: 32px;
     margin-top: 6rem;
 }
@@ -386,6 +386,36 @@ body {
 
 
 @media (max-width: 576px) {
+
+    .header-dropdown__content {
+        width: fit-content;
+        white-space: nowrap;
+        display: flex;
+        flex-direction: column;
+        background-color: var(--color-lightblack);
+        border-radius: 8px;
+        display: none;
+    }
+
+    .dropdown-link {
+        font-family: var(--text-font1);
+        text-decoration: none;
+        font-size: 20px;
+        color: var(--color-white);
+        padding: 1.5rem 5rem 1.5rem 1rem;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+
+    .header-dropdown:hover .header-dropdown__content {
+        display: flex;
+    }
+
+    .dropdown-link:hover {
+        background-color: var(--color-darkwhite);
+        color: var(--color-lightblack);
+    }
+
     .header {
         height: 40vh;
         background-position: 50%;
@@ -396,8 +426,9 @@ body {
         transform: scale(0.16)
     }
 
-    .header__burger {
+    .header-dropdown {
         display: block;
+        width: auto;
     }
 
     .header__sign-in {
@@ -555,8 +586,6 @@ body {
 }
 
 
-
-
 /* -----OUR ROOMS PAGE----- */
 
 .header-rooms {
@@ -572,8 +601,7 @@ body {
     align-items: center;
 }
 
-.header__burger {
-    position: absolute;
+.header-dropdown__burger {
     top: 1rem;
     left: 1rem;
     width: 2.5rem;
@@ -750,6 +778,7 @@ body {
 .room-gallery__room1 {
     aspect-ratio: 1 / 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -759,9 +788,6 @@ body {
     background-position: center;
     background-position: 50%;
     border-radius: 8px;
-    color: var(--color-white);
-    font-family: var(--text-font1);
-    font-size: 36px;
     cursor: pointer;
     transition: transform 0.2s;
 }
@@ -769,6 +795,7 @@ body {
 .room-gallery__room2 {
     aspect-ratio: 1 / 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -778,9 +805,6 @@ body {
     background-position: center;
     background-position: 50%;
     border-radius: 8px;
-    color: var(--color-white);
-    font-family: var(--text-font1);
-    font-size: 36px;
     cursor: pointer;
     transition: transform 0.2s;
 }
@@ -788,6 +812,7 @@ body {
 .room-gallery__room3 {
     aspect-ratio: 1 / 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -797,9 +822,6 @@ body {
     background-position: center;
     background-position: 50%;
     border-radius: 8px;
-    color: var(--color-white);
-    font-family: var(--text-font1);
-    font-size: 36px;
     cursor: pointer;
     transition: transform 0.2s;
 }
@@ -807,6 +829,7 @@ body {
 .room-gallery__room4 {
     aspect-ratio: 1 / 1;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -816,11 +839,33 @@ body {
     background-position: center;
     background-position: 50%;
     border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.room-gallery__name {
     color: var(--color-white);
     font-family: var(--text-font1);
     font-size: 36px;
-    cursor: pointer;
-    transition: transform 0.2s;
+    text-shadow: 2px 2px 8px black;
+}
+
+.room-gallery__paragraph--web {
+    font-family: var(--text-font2);
+    font-size: 14px;
+    text-align: center;
+    padding: 0 2rem 0 2rem;
+    color: var(--color-white);
+    text-shadow: 2px 2px 8px black;
+}
+
+.room-gallery__paragraph--mobile {
+    font-family: var(--text-font2);
+    font-size: 12px;
+    text-align: center;
+    padding: 0 2rem 0 2rem;
+    color: var(--color-white);
+    display: none;
 }
 
 .room-gallery__room1:hover,
@@ -839,7 +884,7 @@ body {
         border-radius: 0px 0px 40px 40px;
     }
     
-    .header__burger {
+    .header-dropdown__burger {
         display: block;
     }
 
@@ -902,12 +947,18 @@ body {
     margin-bottom: 4rem;
 }
 
-    .room-gallery__room1,
-    .room-gallery__room2,
-    .room-gallery__room3,
-    .room-gallery__room4 {
-        font-size: 22px;
-    }
+.room-gallery__name {
+    font-size: 22px;
+}
+
+.room-gallery__paragraph--web {
+    display: none;
+}
+
+.room-gallery__paragraph--mobile {
+    display: block;
+}
+
 }
 
 /* -----BOOK PAGE----- */
